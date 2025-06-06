@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éden Beauty Studio | Estética e Bem-Estar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements that need more styling */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Animation for the call-to-action button */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .cta-button {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-pink-600">
+                        <span class="text-gray-800">Éden</span> Beauty
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#home" class="text-gray-800 hover:text-pink-600 transition">Home</a>
+                    <a href="#services" class="text-gray-800 hover:text-pink-600 transition">Serviços</a>
+                    <a href="#about" class="text-gray-800 hover:text-pink-600 transition">Sobre</a>
+                    <a href="#testimonials" class="text-gray-800 hover:text-pink-600 transition">Depoimentos</a>
+                    <a href="#contact" class="text-gray-800 hover:text-pink-600 transition">Contato</a>
+                    <a href="cursos.html" class="text-gray-800 hover:text-pink-600 transition">Cursos</a>
+                </div>
+                
+                <button class="md:hidden text-gray-800 focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <div class="hidden md:block">
+                    <a href="#" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-semibold transition">
+                        Agendar Horário
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-pink-600">Home</a>
+                <a href="#services" class="block py-2 text-gray-800 hover:text-pink-600">Serviços</a>
+                <a href="#about" class="block py-2 text-gray-800 hover:text-pink-600">Sobre</a>
+                <a href="#testimonials" class="block py-2 text-gray-800 hover:text-pink-600">Depoimentos</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-pink-600">Contato</a>
+                <a href="#" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-semibold text-center transition">
+                    Agendar Horário
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 animate-fadeIn">
+                Descubra Sua Beleza Interior
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                Cuidados estéticos premium que realçam sua beleza natural e renovam sua confiança.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="cta-button bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-full font-bold text-lg transition transform">
+                    Agendar Consulta
+                </a>
+                <a href="#services" class="bg-white hover:bg-gray-100 text-pink-600 px-8 py-4 rounded-full font-bold text-lg transition">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos Serviços Exclusivos</h2>
+                <div class="w-20 h-1 bg-pink-600 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
+                    Oferecemos tratamentos personalizados para todas as suas necessidades de beleza e bem-estar.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-spa text-6xl text-pink-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Massagem Relaxante</h3>
+                        <p class="text-gray-600 mb-4">
+                            Massagens terapêuticas que aliviam o estresse e promovem bem-estar geral.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">A partir de R$ 180</span>
+                            <a href="#" class="text-sm text-pink-600 hover:text-pink-700 font-semibold">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-cut text-6xl text-pink-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Depilação a Laser</h3>
+                        <p class="text-gray-600 mb-4">
+                            Técnica moderna para remoção definitiva dos pelos com segurança e eficácia.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">A partir de R$ 250</span>
+                            <a href="#" class="text-sm text-pink-600 hover:text-pink-700 font-semibold">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-magic text-6xl text-pink-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Tratamento Facial</h3>
+                        <p class="text-gray-600 mb-4">
+                            Limpeza profunda, hidratação e tratamento personalizado para sua pele.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">A partir de R$ 220</span>
+                            <a href="#" class="text-sm text-pink-600 hover:text-pink-700 font-semibold">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-hand-sparkles text-6xl text-pink-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Manicure & Pedicure</h3>
+                        <p class="text-gray-600 mb-4">
+                            Cuidados profissionais para suas mãos e pés com produtos de alta qualidade.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">A partir de R$ 100</span>
+                            <a href="#" class="text-sm text-pink-600 hover:text-pink-700 font-semibold">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-spray-can text-6xl text-pink-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Botox Natural</h3>
+                        <p class="text-gray-600 mb-4">
+                            Tratamento eficaz para redução de linhas de expressão e rejuvenescimento.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">A partir de R$ 500</span>
+                            <a href="#" class="text-sm text-pink-600 hover:text-pink-700 font-semibold">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-500">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-leaf text-6xl text-pink-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Terapia Capilar</h3>
+                        <p class="text-gray-600 mb-4">
+                            Tratamentos especializados para cabelos saudáveis, hidratados e fortalecidos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">A partir de R$ 180</span>
+                            <a href="#" class="text-sm text-pink-600 hover:text-pink-700 font-semibold">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold transition">
+                    Ver Todos os Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+                         alt="Sobre o Éden Beauty" 
+                         class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="lg:w-1/2 lg:pl-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Sobre o Éden Beauty</h2>
+                    <p class="text-gray-600 mb-6">
+                        Há mais de 10 anos transformando vidas através da beleza e autoestima, o Éden Beauty se consolidou como referência em tratamentos estéticos de alta qualidade.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Nossa equipe é formada por profissionais altamente qualificados e comprometidos com o seu bem-estar. Utilizamos apenas produtos de primeira linha e tecnologia de ponta para garantir resultados excepcionais.
+                    </p>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-check-circle text-pink-600 mr-3 text-xl"></i>
+                            <span class="text-gray-700">Profissionais certificados e experientes</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-check-circle text-pink-600 mr-3 text-xl"></i>
+                            <span class="text-gray-700">Produtos de alta qualidade</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-check-circle text-pink-600 mr-3 text-xl"></i>
+                            <span class="text-gray-700">Ambiente acolhedor e higienizado</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-pink-600 mr-3 text-xl"></i>
+                            <span class="text-gray-700">Atendimento personalizado</span>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold transition">
+                        Conheça nossa equipe
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">O Que Nossas Clientes Dizem</h2>
+                <div class="w-20 h-1 bg-pink-600 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
+                    A satisfação e resultados de nossas clientes são nossa maior recompensa.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Ana Paula" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800">Ana Paula</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Me senti maravilhosa depois do tratamento facial! A profissional foi extremamente cuidadosa e atenciosa. Minha pele nunca esteve tão bonita. Recomendo a todas!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Juliana" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800">Juliana</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "A depilação a laser mudou minha vida! Menos dor, menos pelos e mais autoestima. O atendimento no Éden Beauty é impecável, desde a recepção até os procedimentos."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="Camila" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800">Camila</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Sou cliente há 3 anos e continuo encantada! Os profissionais entendem exatamente o que precisamos e recomendam os melhores tratamentos. Ambiente super higienizado e aconchegante."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-pink-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronta para se Sentir Incrível?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Agende sua avaliação gratuita e descubra como podemos realçar sua beleza natural.
+            </p>
+            <a href="#" class="inline-block bg-white hover:bg-gray-100 text-pink-600 px-8 py-4 rounded-full font-bold text-lg transition">
+                Agendar Avaliação
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Entre em Contato</h2>
+                    <p class="text-gray-600 mb-8">
+                        Tem alguma dúvida ou quer agendar um horário? Entre em contato conosco pelos meios abaixo ou preencha o formulário.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-pink-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-1">Endereço</h4>
+                                <p class="text-gray-600">Rua das Belezas, 123 - Centro<br>São Paulo/SP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-pink-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-1">Telefone</h4>
+                                <p class="text-gray-600">(11) 1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-pink-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-1">Email</h4>
+                                <p class="text-gray-600">contato@edenbeauty.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-pink-600 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-1">Horário de Funcionamento</h4>
+                                <p class="text-gray-600">
+                                    Segunda a Sexta: 9h às 20h<br>
+                                    Sábado: 9h às 16h<br>
+                                    Domingo: Fechado
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-bold text-gray-800 mb-4">Siga-nos</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-pink-600 hover:text-pink-700 text-2xl"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-pink-600 hover:text-pink-700 text-2xl"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-pink-600 hover:text-pink-700 text-2xl"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Seu Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-600">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Seu Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-600">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-semibold mb-2">Seu Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-600">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-semibold mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-600">
+                                <option value="">Selecione um serviço</option>
+                                <option value="massage">Massagem Relaxante</option>
+                                <option value="laser">Depilação a Laser</option>
+                                <option value="facial">Tratamento Facial</option>
+                                <option value="nails">Manicure & Pedicure</option>
+                                <option value="botox">Botox Natural</option>
+                                <option value="hair">Terapia Capilar</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-600"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold transition">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Éden Beauty</h3>
+                    <p class="text-gray-400">
+                        Transformando vidas através da estética e bem-estar desde 2012.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Serviços</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Depoimentos</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Massagem Relaxante</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Depilação a Laser</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Tratamento Facial</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Manicure & Pedicure</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Botox Natural</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Assine nossa newsletter para receber promoções e dicas de beleza.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Éden Beauty. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-pink-600 text-white w-12 h-12 rounded-full shadow-md flex items-center justify-center hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

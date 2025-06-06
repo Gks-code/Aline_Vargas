@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éden Beauty Studio | Cursos Profissionalizantes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        .hero-courses {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1581338834647-b0fb40704e21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+        }
+        
+        .course-card {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.1);
+        }
+        
+        .btn-more-info {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-more-info:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.5), 0 2px 4px -1px rgba(236, 72, 153, 0.06);
+        }
+        
+        .course-image {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-pink-600">
+                        <span class="text-gray-800">Éden</span> Beauty
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="index.html" class="text-gray-800 hover:text-pink-600 transition">Home</a>
+                    <a href="services.html" class="text-gray-800 hover:text-pink-600 transition">Serviços</a>
+                    <a href="about.html" class="text-gray-800 hover:text-pink-600 transition">Sobre</a>
+                    <a href="courses.html" class="text-pink-600 font-semibold transition">Cursos</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-pink-600 transition">Contato</a>
+                </div>
+                
+                <button class="md:hidden text-gray-800 focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <div class="hidden md:block">
+                    <a href="#" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-semibold transition">
+                        Agendar Horário
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-pink-600">Home</a>
+                <a href="services.html" class="block py-2 text-gray-800 hover:text-pink-600">Serviços</a>
+                <a href="about.html" class="block py-2 text-gray-800 hover:text-pink-600">Sobre</a>
+                <a href="courses.html" class="block py-2 text-pink-600 font-semibold">Cursos</a>
+                <a href="contact.html" class="block py-2 text-gray-800 hover:text-pink-600">Contato</a>
+                <a href="#" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-semibold text-center transition">
+                    Agendar Horário
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-courses flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Cursos Profissionalizantes
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                Capacitação de excelência para quem deseja ingressar ou se especializar na área da estética.
+            </p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos Cursos</h2>
+                <div class="w-20 h-1 bg-pink-600 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
+                    Conheça nossos cursos ministrados por profissionais experientes e reconhecidos no mercado.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80" 
+                         alt="Design de Sobrancelhas" 
+                         class="course-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Design de Sobrancelhas</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aprenda técnicas profissionais de design, henna e micropigmentação para sobrancelhas perfeitas.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">12 horas | R$ 800</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                         alt="Depilação a Laser" 
+                         class="course-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Depilação a Laser</h3>
+                        <p class="text-gray-600 mb-4">
+                            Curso completo de depilação a laser com técnicas avançadas e práticas em equipamentos modernos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">40 horas | R$ 2.500</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1599351430140-c70f0250bd70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                         alt="Massoterapia" 
+                         class="course-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Massoterapia Avançada</h3>
+                        <p class="text-gray-600 mb-4">
+                            Domine diversas técnicas de massagem terapêutica e relaxante para oferecer tratamentos completos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">60 horas | R$ 3.200</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 4 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Estética Facial" 
+                         class="course-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Estética Facial Profissional</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aprenda protocolos completos de limpeza de pele, peelings e tratamentos faciais personalizados.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">50 horas | R$ 2.800</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 5 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1596704017250-13a8ef6e1e1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                         alt="Podologia" 
+                         class="course-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Podologia Estética</h3>
+                        <p class="text-gray-600 mb-4">
+                            Especialize-se em cuidados com os pés, incluindo tratamento de calos, unhas encravadas e esmaltação.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">30 horas | R$ 1.800</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 6 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Drenagem Linfática" 
+                         class="course-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Drenagem Linfática</h3>
+                        <p class="text-gray-600 mb-4">
+                            Técnicas manuais de drenagem linfática para redução de medidas, tratamento de edemas e relaxamento.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">20 horas | R$ 1.200</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold transition">
+                    Ver Todos os Cursos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Por que estudar no Éden Beauty?</h2>
+                <div class="w-20 h-1 bg-pink-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Certificação Reconhecida</h3>
+                    <p class="text-gray-600">
+                        Todos nossos cursos emitem certificado válido em todo território nacional, com carga horária e conteúdo programático.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-graduate text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Professores Especialistas</h3>
+                    <p class="text-gray-600">
+                        Nossa equipe docente é formada por profissionais atuantes no mercado, com ampla experiência prática e didática.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-briefcase text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Prática Real</h3>
+                    <p class="text-gray-600">
+                        Cursos com abordagem prática desde o primeiro dia, utilizando equipamentos e produtos profissionais.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-holding-heart text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Acompanhamento</h3>
+                    <p class="text-gray-600">
+                        Suporte pós-curso para tirar dúvidas e orientação para ingressar no mercado de trabalho.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Infraestrutura Completa</h3>
+                    <p class="text-gray-600">
+                        Salas equipadas com os melhores aparelhos e materiais para um aprendizado de excelência.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-piggy-bank text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Condições Especiais</h3>
+                    <p class="text-gray-600">
+                        Parcelamento em até 12x, descontos para ex-alunos e pacotes promocionais para múltiplos cursos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-pink-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronta para Transformar sua Carreira?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Fale com nossa equipe e descubra o curso perfeito para seus objetivos profissionais.
+            </p>
+            <a href="#" class="inline-block bg-white hover:bg-gray-100 text-pink-600 px-8 py-4 rounded-full font-bold text-lg transition">
+                Fale com um Consultor
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Éden Beauty</h3>
+                    <p class="text-gray-400">
+                        Transformando vidas através da estética e bem-estar desde 2012.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Serviços</a></li>
+                        <li><a href="courses.html" class="text-gray-400 hover:text-white transition">Cursos</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">Sobre</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Cursos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Design de Sobrancelhas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Depilação a Laser</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Massoterapia</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Estética Facial</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Receba informações sobre novos cursos e promoções.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Éden Beauty. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-pink-600 text-white w-12 h-12 rounded-full shadow-md flex items-center justify-center hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
