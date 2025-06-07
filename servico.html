@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éden Beauty Studio | Procedimentos Estéticos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        .hero-procedures {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+        }
+        
+        .procedure-card {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .procedure-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.1);
+        }
+        
+        .btn-more-info {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-more-info:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.5), 0 2px 4px -1px rgba(236, 72, 153, 0.06);
+        }
+        
+        .procedure-image {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .category-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .category-tab:hover, .category-tab.active {
+            background-color: #ec4899;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-pink-600">
+                        <span class="text-gray-800">Éden</span> Beauty
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="index.html" class="text-gray-800 hover:text-pink-600 transition">Home</a>
+                    <a href="procedimentos.html" class="text-pink-600 font-semibold transition">Procedimentos</a>
+                    <a href="cursos.html" class="text-gray-800 hover:text-pink-600 transition">Cursos</a>
+                    <a href="about.html" class="text-gray-800 hover:text-pink-600 transition">Sobre</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-pink-600 transition">Contato</a>
+                </div>
+                
+                <button class="md:hidden text-gray-800 focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <div class="hidden md:block">
+                    <a href="#" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-semibold transition">
+                        Agendar Horário
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-pink-600">Home</a>
+                <a href="procedimentos.html" class="block py-2 text-pink-600 font-semibold">Procedimentos</a>
+                <a href="cursos.html" class="block py-2 text-gray-800 hover:text-pink-600">Cursos</a>
+                <a href="about.html" class="block py-2 text-gray-800 hover:text-pink-600">Sobre</a>
+                <a href="contact.html" class="block py-2 text-gray-800 hover:text-pink-600">Contato</a>
+                <a href="#" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-semibold text-center transition">
+                    Agendar Horário
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-procedures flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Procedimentos Estéticos
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                Descubra nossos tratamentos exclusivos para realçar sua beleza natural
+            </p>
+        </div>
+    </section>
+
+    <!-- Categories Navigation -->
+    <section class="py-10 bg-white sticky top-20 z-40 shadow-sm">
+        <div class="container mx-auto px-6">
+            <div class="flex overflow-x-auto space-x-4 pb-2">
+                <button class="category-tab px-6 py-2 rounded-full border border-pink-600 text-pink-600 font-semibold whitespace-nowrap active">
+                    Todos
+                </button>
+                <button class="category-tab px-6 py-2 rounded-full border border-pink-600 text-pink-600 font-semibold whitespace-nowrap">
+                    Facial
+                </button>
+                <button class="category-tab px-6 py-2 rounded-full border border-pink-600 text-pink-600 font-semibold whitespace-nowrap">
+                    Corporal
+                </button>
+                <button class="category-tab px-6 py-2 rounded-full border border-pink-600 text-pink-600 font-semibold whitespace-nowrap">
+                    Depilação
+                </button>
+                <button class="category-tab px-6 py-2 rounded-full border border-pink-600 text-pink-600 font-semibold whitespace-nowrap">
+                    Massagens
+                </button>
+                <button class="category-tab px-6 py-2 rounded-full border border-pink-600 text-pink-600 font-semibold whitespace-nowrap">
+                    Capilar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Procedures Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos Tratamentos</h2>
+                <div class="w-20 h-1 bg-pink-600 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
+                    Conheça nossos procedimentos realizados por profissionais especializados
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Procedure 1 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="facial">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                         alt="Limpeza de Pele Profunda" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Limpeza de Pele Profunda</h3>
+                        <p class="text-gray-600 mb-4">
+                            Remoção de cravos e impurezas com hidratação e máscara facial personalizada.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 220</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedure 2 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="depilacao">
+                    <img src="https://images.unsplash.com/photo-1599351430140-c70f0250bd70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                         alt="Depilação a Laser" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Depilação a Laser</h3>
+                        <p class="text-gray-600 mb-4">
+                            Técnica moderna para remoção definitiva dos pelos com segurança e eficácia.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 250/sessão</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedure 3 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="massagens">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Massagem Relaxante" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Massagem Relaxante</h3>
+                        <p class="text-gray-600 mb-4">
+                            Alívio do estresse e tensão muscular com óleos essenciais aromáticos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 180</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedure 4 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="facial">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Botox Natural" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Botox Natural</h3>
+                        <p class="text-gray-600 mb-4">
+                            Tratamento para redução de linhas de expressão e rejuvenescimento facial.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 500</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedure 5 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="corporal">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Drenagem Linfática" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Drenagem Linfática</h3>
+                        <p class="text-gray-600 mb-4">
+                            Técnica manual para redução de medidas e tratamento de edemas.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 200</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedure 6 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="capilar">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" 
+                         alt="Terapia Capilar" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Terapia Capilar</h3>
+                        <p class="text-gray-600 mb-4">
+                            Tratamento para queda de cabelo, hidratação e fortalecimento dos fios.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 180</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedure 7 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="facial">
+                    <img src="https://images.unsplash.com/photo-1526758097130-bab247274f58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                         alt="Peeling Químico" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Peeling Químico</h3>
+                        <p class="text-gray-600 mb-4">
+                            Renovação celular para tratamento de manchas, acne e rejuvenescimento.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 350</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedure 8 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="corporal">
+                    <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                         alt="Radiofrequência" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Radiofrequência Corporal</h3>
+                        <p class="text-gray-600 mb-4">
+                            Estímulo de colágeno para flacidez, celulite e redução de medidas.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 300/sessão</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedure 9 -->
+                <div class="procedure-card bg-white rounded-lg shadow-md overflow-hidden" data-category="depilacao">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80" 
+                         alt="Design de Sobrancelhas" 
+                         class="procedure-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Design de Sobrancelhas</h3>
+                        <p class="text-gray-600 mb-4">
+                            Modelagem personalizada com henna ou tintura para realçar o olhar.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-pink-600 font-bold">R$ 120</span>
+                            <button class="btn-more-info bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold transition">
+                    Ver Todos os Procedimentos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Por que escolher nossos procedimentos?</h2>
+                <div class="w-20 h-1 bg-pink-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-md text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Profissionais Qualificados</h3>
+                    <p class="text-gray-600">
+                        Nossa equipe é formada por especialistas com formação e experiência comprovada.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Segurança</h3>
+                    <p class="text-gray-600">
+                        Utilizamos apenas produtos e equipamentos certificados pelos órgãos reguladores.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-spa text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Bem-estar</h3>
+                    <p class="text-gray-600">
+                        Ambiente climatizado e acolhedor para você relaxar durante os tratamentos.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Resultados</h3>
+                    <p class="text-gray-600">
+                        Protocolos personalizados para garantir os melhores resultados em cada tratamento.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Atendimento</h3>
+                    <p class="text-gray-600">
+                        Cuidado individualizado e acompanhamento pós-procedimento.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-piggy-bank text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pacotes Promocionais</h3>
+                    <p class="text-gray-600">
+                        Descontos especiais para sessões em pacote e tratamentos combinados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-pink-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronta para se cuidar?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Agende uma avaliação gratuita e descubra o tratamento ideal para você.
+            </p>
+            <a href="#" class="inline-block bg-white hover:bg-gray-100 text-pink-600 px-8 py-4 rounded-full font-bold text-lg transition">
+                Agendar Avaliação
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Éden Beauty</h3>
+                    <p class="text-gray-400">
+                        Transformando vidas através da estética e bem-estar desde 2012.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="procedimentos.html" class="text-gray-400 hover:text-white transition">Procedimentos</a></li>
+                        <li><a href="cursos.html" class="text-gray-400 hover:text-white transition">Cursos</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">Sobre</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Procedimentos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Facial</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Corporal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Depilação</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Massagens</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Receba promoções e dicas de beleza diretamente no seu email.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Éden Beauty. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-pink-600 text-white w-12 h-12 rounded-full shadow-md flex items-center justify-center hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Category filter
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const procedureCards = document.querySelectorAll('.procedure-card');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                categoryTabs.forEach(t => t.classList.remove('active', 'bg-pink-600', 'text-white'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active', 'bg-pink-600', 'text-white');
+                
+                const category = tab.textContent.trim().toLowerCase();
+                
+                // Show all cards if "Todos" is selected
+                if (category === 'todos') {
+                    procedureCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+                    return;
+                }
+                
+                // Filter cards based on category
+                procedureCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (cardCategory === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
